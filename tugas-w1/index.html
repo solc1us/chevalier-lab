@@ -1,0 +1,69 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<title>To-Do List</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="container">
+				<h1>To-Do List</h1>
+				<form class="input-tugas">
+					<label>Nama Tugas</label>
+					<input
+						type="text"
+						name="nama"
+						id="nama"
+						placeholder="Masukkan nama tugas"
+					/>
+					<label>Deskripsi Tugas</label>
+					<input
+						type="text"
+						name="deskripsi"
+						id="deskripsi"
+						placeholder="Masukkan deskripsi tugas"
+					/>
+					<label>Deadline Tugas</label>
+					<input type="date" name="tanggal" id="tanggal" placeholder="date" />
+					<button id="add">Tambah</button>
+				</form>
+			</div>
+			<div class="container">
+				<h1>Daftar Tugas</h1>
+				<ul class="list-tugas">
+					<li class="atribut-list-tugas">
+						<p class="judul-atribut">Nama Tugas: </p>
+						<p>Belajar HTML</p>
+					</li>
+					<li class="atribut-list-tugas">
+						<p class="judul-atribut">Deskripsi: </p>
+						<p>Memahami struktur dasar HTML</p>
+					</li>
+					<li class="atribut-list-tugas">
+						<p class="judul-atribut">Deadline: </p>
+						<p>2024-12-15</p>
+					</li>
+				</ul>
+				<ul class="list-tugas">
+					<li class="atribut-list-tugas">
+						<p class="judul-atribut">Nama Tugas: </p>
+						<p>Belajar CSS</p>
+					</li>
+					<li class="atribut-list-tugas">
+						<p class="judul-atribut">Deskripsi: </p>
+						<p>Mempelajari selektor dan properti dasar CSS</p>
+					</li>
+					<li class="atribut-list-tugas">
+						<p class="judul-atribut">Deadline: </p>
+						<p>2024-12-20</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
