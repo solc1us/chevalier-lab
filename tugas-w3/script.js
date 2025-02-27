@@ -1,49 +1,62 @@
-let notes = [
+let toDoLists = [
 	{
-		title: "My next trip",
-		description: "I would like to go to Spain",
+		nama: "Belajar HTML dan CSS",
+		deskripsi: "Mempelajari dasar-dasar HTML dan CSS untuk membuat website yang menarik.",
+		deadline: "2024-12-15",
 	},
 ];
 
-let notesElement = document.getElementById("notes-list");
+let toDoListsElement = document.getElementById("daftar-tugas");
 
-function renderNotes() {
-	notesElement.innerHTML = "";
-	notes.forEach((note, index) => {
-		let noteElement = `
-        <div class = "note">
-            <h3>${note.title}</h3>
-            <p>${note.description}</p>
-            <button onclick="deleteNote(${index})">Delete
-            </button>
-            </div>
+function renderToDoLists() {
+	toDoListsElement.innerHTML = "";
+	toDoLists.forEach((toDoList, index) => {
+		let toDoListElement = `
+			<div class="list-tugas">
+					<div class="atribut-list-tugas">
+						<h2>${toDoList.nama}</h2>
+					</div>
+					<div class="atribut-list-tugas">
+						<p>${toDoList.deskripsi}</p>
+					</div>
+					<div class="atribut-list-tugas">
+						<p>Deadline:&nbsp;</p>
+						<p>${toDoList.deadline}</p>
+					</div>
+					<div class="atribut-list-tugas">
+						<button class="delete" onclick="deleteToDoList(${index})">Hapus</button>
+					</div>
+				</div>
         `;
-		notesElement.innerHTML += noteElement;
+		toDoListsElement.innerHTML += toDoListElement;
 	});
 }
 
-function addNote() {
-	const newTitle = document.getElementById("title").value;
-	const newDescription = document.getElementById("description").value;
+function addToDoList() {
+
+	const newNama = document.getElementById("nama").value;
+	const newDeskripsi = document.getElementById("deskripsi").value;
+	const newDeadline = document.getElementById("deadline").value;
 
 	if (
-		newTitle &&
-		newDescription &&
-		newTitle.length > 1 &&
-		newDescription.length > 1
+		newNama &&
+		newDeskripsi &&
+		newNama.length > 1 &&
+		newDeskripsi.length > 1
 	) {
 		const newData = {
-			title: newTitle,
-			description: newDescription,
+			nama: newNama,
+			deskripsi: newDeskripsi,
+			deadline: newDeadline,
 		};
-        notes.push(newData);
-        renderNotes();
-    }
+		toDoLists.push(newData);
+		renderToDoLists();
+	}
 }
 
-function deleteNote(index) {
-    notes.splice(index, 1);
-    renderNotes();
+function deleteToDoList(index) {
+	toDoLists.splice(index, 1);
+	renderToDoLists();
 }
 
-renderNotes();
+renderToDoLists();
