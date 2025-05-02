@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mahasiswa Management</title>
+  </head>
+  <body>
+    <header>
+      <h1>Mahasiswa Management</h1>
+    </header>
+    <main>
+      <div class="form" id="mahasiswaForm">
+        <div>
+          <label for="nim">NIM</label>
+          <input type="text" id="nim" required />
+        </div>
+        <div>
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" required />
+        </div>
+        <div>
+          <label for="jurusan">Jurusan</label>
+          <input type="text" id="jurusan" required />
+        </div>
+        <button type="submit" onclick="submitData()">Submit Data</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>NIM</th>
+            <th>Nama</th>
+            <th>Jurusan</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="mahasiswaTableBody">
+          <!-- Rows will be dynamically added here -->
+        </tbody>
+      </table>
+    </main>
+  </body>
+  
+  <script src="script.js"></script>
+  <!-- <script>
+    fetch('http://localhost:5000/api/mahasiswa/')
+      .then(res => res.json())
+      .then(data => {
+        const tbody = document.getElementById('mahasiswaTableBody');
+        data.forEach(m => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${m.id}</td>
+            <td>${m.nim}</td>
+            <td>${m.nama}</td>
+            <td>${m.jurusan}</td>
+          `;
+          tbody.appendChild(row);
+        });
+      })
+      .catch(err => {
+        console.error('Gagal fetch data:', err);
+      });
+  </script> -->
+
+</html>

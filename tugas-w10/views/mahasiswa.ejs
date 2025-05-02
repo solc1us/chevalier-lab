@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Daftar Mahasiswa</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+  </style>
+</head>
+<body>
+  <h1>Daftar Mahasiswa</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nama</th>
+        <th>Email</th>
+        <!-- Tambah kolom lain sesuai data lo -->
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(m => { %>
+        <tr>
+          <td><%= m.id %></td>
+          <td><%= m.nama %></td>  
+          <td><%= m.jurusan %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
